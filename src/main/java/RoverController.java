@@ -1,9 +1,10 @@
 public class RoverController {
     private Rover rover;
-    public  RoverController(Rover rover)
-    {
+
+    public RoverController(Rover rover) {
         this.rover = rover;
     }
+
     public String execute(String mission) {
         String[] commands = mission.split(",");
         int areaWidth = Integer.parseInt(commands[0]);
@@ -18,15 +19,15 @@ public class RoverController {
         }
         return rover.getPosition();
     }
-    private void executeOneCommand(String command)
-    {
-        if(command.equals("M")||command.equals("S")||command.equals("E")||command.equals("W")) {
+
+    private void executeOneCommand(String command) {
+        if (command.equals("M") || command.equals("S") || command.equals("E") || command.equals("W")) {
             rover.move();
         }
-        if(command.equals("L")) {
+        if (command.equals("L")) {
             rover.turnLeft();
         }
-        if(command.equals("R")) {
+        if (command.equals("R")) {
             rover.turnRight();
         }
     }
