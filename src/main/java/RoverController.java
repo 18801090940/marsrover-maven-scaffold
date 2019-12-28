@@ -14,18 +14,20 @@ public class RoverController {
         rover.land(new Area(areaWidth, areaHeight), x, y, direction);
 
         for (int i = 5; i < commands.length; i++) {
-          //  executeOneCommand(commands[]);
+            executeOneCommand(commands[i]);
         }
-
-
-        rover.move();
-        rover.turnLeft();
-        rover.move();
         return rover.getPosition();
     }
-    private  void executeOneCommand(String command)
+    private void executeOneCommand(String command)
     {
-        if(command.equals("M"))
+        if(command.equals("M")||command.equals("S")||command.equals("E")||command.equals("W")) {
             rover.move();
+        }
+        if(command.equals("L")) {
+            rover.turnLeft();
+        }
+        if(command.equals("R")) {
+            rover.turnRight();
+        }
     }
 }

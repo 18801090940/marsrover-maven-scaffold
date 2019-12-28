@@ -8,12 +8,15 @@ public class Rover {
     private int x;
     private int y;
     private String direction;
+
     public void land(Area area, int x, int y, String direction)
     {
-    /*    if(!(x < area.containsPointWidth(x)))
-        {
-            throw new IllegalArgumentException("x=" + x+"is out of a");
-        }*/
+        if(x < 0 || x > area.containsPointWidth()) {
+            throw new IllegalArgumentException("x=" + x +" is out of area width "+ area.containsPointWidth() + "");
+        }
+        if(y < 0 || x > area.containsPointHeight()) {
+            throw new IllegalArgumentException("y=" + y +" is out of area height "+ area.containsPointHeight() + "");
+        }
         this.x = x;
         this.y = y;
         this.direction = direction;
@@ -60,15 +63,15 @@ public class Rover {
             return;
         }
         if(direction.equals((EAST))) {
-            direction = NORTH;
+            direction = SOUTH;
             return;
         }
         if(direction.equals((NORTH))) {
-            direction = WEST;
+            direction = EAST;
             return;
         }
         if(direction.equals((WEST))) {
-            direction = SOUTH;
+            direction = NORTH;
             return;
         }
     }

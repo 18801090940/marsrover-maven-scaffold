@@ -5,5 +5,12 @@ public class Area {
         this.width = width;
         this.height = height;
     }
-
+    public int containsPointWidth()
+    {
+        return this.width;
+    }
+    public int containsPointHeight()
+    {
+        return this.height;
+    }
 }
