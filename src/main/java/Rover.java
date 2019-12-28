@@ -1,4 +1,3 @@
-import Point.Point;
 
 public class Rover {
     public static final String EAST = "E";
@@ -32,8 +31,9 @@ public class Rover {
             x -= 1;
         } else if (direction.equals(NORTH)) {
             y += 1;
-        } else
+        } else {
             y -= 1;
+        }
     }
 
     public void turnLeft() {
@@ -53,6 +53,7 @@ public class Rover {
             direction = SOUTH;
             return;
         }
+        return;
     }
 
     public void turnRight() {
@@ -72,6 +73,7 @@ public class Rover {
             direction = NORTH;
             return;
         }
+        return;
     }
 
 }
