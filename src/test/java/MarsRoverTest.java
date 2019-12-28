@@ -57,6 +57,6 @@ public class MarsRoverTest {
     public void should_warning_when_land_out_of_area()
     {
         Area area =
-    }
-    pubRoverController*/
+    }*/
+  //  pubRoverController
 }
